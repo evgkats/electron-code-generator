@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />  
+    <link href="./styles.css" rel="stylesheet">
+    <title>Generate Code</title>
+  </head>
+  <body>
+
+    <div class ="container">
+
+      <h1>Generate Code</h1>
+
+      <div>
+        <form id="form" onsubmit="return false" class="mb-3">
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="input1" class="form-label">Field 1</label>
+                <input type="text" maxlength="4" class="form-control num-input" required
+                    id="input1" aria-describedby="field1">
+                <div id="field1" class="form-text">First group of 4 digits</div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mb-3">
+                <label for="input2" class="form-label">Field 2</label>
+                <input type="text" maxlength="4" class="form-control num-input" required
+                    id="input2" aria-describedby="field2">
+                <div id="field2" class="form-text">Second group of 4 digits</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="input3" class="form-label">Field 3</label>
+                <input type="text" maxlength="4" class="form-control num-input" id="input3" 
+                    aria-describedby="field3" required>
+                <div id="field3" class="form-text">Third group of 4 digits</div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="mb-3">
+                <label for="input4" class="form-label">Field 4</label>
+                <input type="text" maxlength="4" class="form-control num-input" id="input4" 
+                    aria-describedby="field4" required>
+                <div id="field4" class="form-text">Fourth group of 4 digits</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button type="submit" id="generate-btn" class="btn btn-primary">Generate</button>
+            </div>
+          </div>
+        </form>
+
+        <div class="row mb-3 invisible" id="new-code-container">
+          <div class="col">
+            <div class="alert alert-primary" role="alert">
+              <span>New Code: </span><span id="new-code"></span>
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="./renderer.js"></script>
+  </body>
+</html>
